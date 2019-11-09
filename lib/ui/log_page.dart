@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class LogPage extends StatelessWidget {
+  final String _name;
+
+  const LogPage(this._name, {Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -8,7 +12,7 @@ class LogPage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.green,
         title: Text(
-          'Log', //Replace with name of person later
+          _name, //Replace with name of person later
           style: TextStyle(fontWeight: FontWeight.bold),
         )
       ),
@@ -91,41 +95,6 @@ class LogPage extends StatelessWidget {
           ),
         ],
       ),
-//      body: Center(
-//        child: Column(
-//          mainAxisAlignment: MainAxisAlignment.end,
-//          children: <Widget>[
-//            const SizedBox(height: 30),
-//            RaisedButton(
-//              onPressed: () {
-//                showDialog(
-//                  context: context,
-//                  builder: (_) => AlertDialog(
-//                    title: Text("Send Message"),
-//                    content: SizedBox(
-//                        height: 280,
-//                        width: 300,
-//                      child: (
-//
-//                      ),
-//                    ),
-//                    actions: [],
-//                    elevation: 24.0,
-//                    backgroundColor: Colors.white,
-//                  ),
-//                  barrierDismissible: true,
-//
-//                );
-//              },
-//              child: const Text(
-//                  '✉',
-//                  style: TextStyle(fontSize: 20)
-//              ),
-//
-//            ),
-//          ],
-//        ),
-//      ),
     );
   }
 }

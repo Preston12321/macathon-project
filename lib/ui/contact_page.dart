@@ -37,7 +37,7 @@ class ContactTile extends StatelessWidget {
       onTap: () {
         Navigator.of(context).push(
           CupertinoPageRoute(
-            builder: (context) => LogPage(),
+            builder: (context) => LogPage(_name),
           ),
         );
       },
