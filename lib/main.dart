@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             }
 
             if (state is Authenticated) {
-              return ContactPage();
+              return LogPage();
             }
 
             if (state is NotAuthenticated) {
@@ -45,12 +45,5 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
