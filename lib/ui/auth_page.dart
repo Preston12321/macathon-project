@@ -23,7 +23,7 @@ class _AuthPageState extends State<AuthPage> {
             Icons.arrow_back
           ),
         ),
-        backgroundColor: Colors.red,
+        backgroundColor: Color.fromRGBO(182, 26, 16, 1.0),
         centerTitle: true,
         title: Text(
         (_currentForm == 2) ? 'Create Account' : 'Sign In',

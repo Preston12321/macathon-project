@@ -8,7 +8,7 @@ class ContactPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.red,
+        backgroundColor: Color.fromRGBO(182, 26, 16, 1.0),
         title: Text(
           'Contacts'
         ),
@@ -18,7 +18,7 @@ class ContactPage extends StatelessWidget {
             Icons.add
         ),
         onPressed: () {},
-        backgroundColor: Colors.red,
+        backgroundColor: Color.fromRGBO(182, 26, 16, 1.0),
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
