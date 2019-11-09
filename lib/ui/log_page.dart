@@ -9,92 +9,56 @@ class LogPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.red,
-        title: Text(
-          _name, //Replace with name of person later
-          style: TextStyle(fontWeight: FontWeight.bold),
-        )
-      ),
+          centerTitle: true,
+          backgroundColor: Colors.red,
+          title: Text(
+            _name, //Replace with name of person later
+            style: TextStyle(fontWeight: FontWeight.bold),
+          )),
       body: Column(
         children: <Widget>[
-          ListTile(
-            leading: RaisedButton(
-                onPressed: () {},
-                child: const Text(
-                    '❤',
-                    style: TextStyle(fontSize: 20)
-                )
-            ),
-            title: Text(
-                'Love you'
-            ),
-            trailing: Icon(
-                Icons.play_arrow
-            ),
-          ),
-          ListTile(
-            leading: RaisedButton(
-                onPressed: () {},
-                child: const Text(
-                    '😥',
-                    style: TextStyle(fontSize: 20)
-                )
-            ),
-            title: Text(
-                'Thinking of you'
-            ),
-            trailing: Icon(
-                Icons.play_arrow
-            ),
-          ),
-          ListTile(
-            leading: RaisedButton(
-                onPressed: () {},
-                child: const Text(
-                    '🤔',
-                    style: TextStyle(fontSize: 20)
-                )
-            ),
-            title: Text(
-                'Thinking of you'
-            ),
-            trailing: Icon(
-                Icons.play_arrow
-            ),
-          ),
-          ListTile(
-            leading: RaisedButton(
-                onPressed: () {},
-                child: const Text(
-                    '☀',
-                    style: TextStyle(fontSize: 20)
-                )
-            ),
-            title: Text(
-                'Have a great day'
-            ),
-            trailing: Icon(
-                Icons.play_arrow
-            ),
-          ),
-          ListTile(
-            leading: RaisedButton(
-                onPressed: () {},
-                child: const Text(
-                    '👍',
-                    style: TextStyle(fontSize: 20)
-                )
-            ),
-            title: Text(
-                'Thank you'
-            ),
-            trailing: Icon(
-                Icons.play_arrow
-            ),
-          ),
-        ],
+          MessageTile('Love you', '❤'),
+          MessageTile("Miss you", '😥'),
+          MessageTile('Have a great day', '☀'),
+          MessageTile('Thinking of you', '🤔'),
+          //MessageTile('Thank you', '👍'),
+        ]
       ),
     );
   }
+}
+
+class MessageTile extends StatelessWidget {
+  final String _name;
+  final String _buttontext;
+  const MessageTile(this._name, this._buttontext, {Key key}) : super(key: key);
+
+
+  @override
+    Widget build(BuildContext context) {
+      return Card(
+        child: ListTile(
+            leading: Icon(Icons.play_arrow),
+            title: Row(
+              children: <Widget>[
+                Text(_name),
+                Container(
+                  child: Icon(
+                    Icons.edit,
+                    size: 15,
+                    color: Colors.grey,
+                  ),
+                )
+              ],
+            ),
+            trailing: RaisedButton(
+              onPressed: () {},
+              child: Text(
+                  _buttontext,
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
+        ),
+      );
+    }
 }

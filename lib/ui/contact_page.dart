@@ -13,14 +13,21 @@ class ContactPage extends StatelessWidget {
           'Contacts'
         ),
       ),
-      floatingActionButton: FloatingActionButton(child: Icon(Icons.add),onPressed: () {},),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+            Icons.add
+        ),
+        onPressed: () {},
+        backgroundColor: Colors.red,
+      ),
       body: ListView(
+        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         children: <Widget>[
-          ContactTile("Mew Soisangwan",""),
-          ContactTile("Gwyneth John",""),
           ContactTile("Alex Zhu",""),
-          ContactTile("Yunze Wang",""),
           ContactTile("Bibiane Morakotkarn",""),
+          ContactTile("Gwyneth John",""),
+          ContactTile("Mew Soisangwan",""),
+          ContactTile("Yunze Wang",""),
         ],
       ),
     );
@@ -35,16 +42,18 @@ class ContactTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: FlutterLogo(),
-      title: Text(_name),
-      onTap: () {
-        Navigator.of(context).push(
-          CupertinoPageRoute(
-            builder: (context) => LogPage(_name),
-          ),
-        );
-      },
+    return Card(
+      child: ListTile(
+        leading: FlutterLogo(),
+        title: Text(_name),
+        onTap: () {
+          Navigator.of(context).push(
+            CupertinoPageRoute(
+              builder: (context) => LogPage(_name),
+            ),
+          );
+        },
+      ),
     );
   }
 }
