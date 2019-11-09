@@ -51,7 +51,7 @@ class _MessageTileState extends State<MessageTile> {
         leading: InkWell(
           child: Icon(Icons.play_arrow),
           onTap: () {
-            widget._player.play(widget._soundPath, volume: 255.0, stayAwake: true, isNotification: true);
+            widget._player.play(widget._soundPath, volume: 255.0, isNotification: true);
           },
         ),
         title: Row(
