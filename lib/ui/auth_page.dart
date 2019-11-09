@@ -15,9 +15,18 @@ class _AuthPageState extends State<AuthPage> {
   Widget build(BuildContext context) {
     var scaffold = Scaffold(
       appBar: AppBar(
+        leading: (_currentForm == 0) ? null: InkWell(
+          onTap: () => setState(() {
+            _currentForm = 0;
+        }),
+          child: Icon(
+            Icons.arrow_back
+          ),
+        ),
+        backgroundColor: Colors.red,
+        centerTitle: true,
         title: Text(
-          'Sign-In',
-          textAlign: TextAlign.center,
+        (_currentForm == 2) ? 'Create Account' : 'Sign In',
         ),
       ),
       key: key,
@@ -50,21 +59,27 @@ class _AuthPageState extends State<AuthPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        RaisedButton(
-          child: Text("Sign in"),
-          onPressed: () {
-            setState(() {
-              _currentForm = 1;
-            });
-          },
+        SizedBox(
+          width: 150,
+          child: RaisedButton(
+            child: Text("Sign in"),
+            onPressed: () {
+              setState(() {
+                _currentForm = 1;
+              });
+            },
+          ),
         ),
-        RaisedButton(
-          child: Text("Create Account"),
-          onPressed: () {
-            setState(() {
-              _currentForm = 2;
-            });
-          },
+        SizedBox(
+          width: 150,
+          child: RaisedButton(
+            child: Text("Create Account"),
+            onPressed: () {
+              setState(() {
+                _currentForm = 2;
+              });
+            },
+          ),
         ),
       ],
     );
@@ -88,16 +103,25 @@ class _AuthFormState extends State<AuthForm> {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        TextField(
-          keyboardType: TextInputType.emailAddress,
-          controller: _emailController,
-          decoration: InputDecoration(labelText: "Email"),
+        Container(
+          width: 350,
+          child: TextField(
+            keyboardType: TextInputType.emailAddress,
+            controller: _emailController,
+            decoration: InputDecoration(labelText: "Email"),
+          ),
         ),
-        TextField(
-          keyboardType: TextInputType.visiblePassword,
-          controller: _passwordController,
-          obscureText: true,
-          decoration: InputDecoration(labelText: "Password"),
+        Container(
+          width: 350,
+          child: TextField(
+            keyboardType: TextInputType.visiblePassword,
+            controller: _passwordController,
+            obscureText: true,
+            decoration: InputDecoration(labelText: "Password"),
+          ),
+        ),
+        Container(
+          height: 20
         ),
         RaisedButton(
           child: Text(widget.createAccount ? "Create account" : "Sign in"),

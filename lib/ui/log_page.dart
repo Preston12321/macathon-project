@@ -10,7 +10,7 @@ class LogPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.red,
         title: Text(
           _name, //Replace with name of person later
           style: TextStyle(fontWeight: FontWeight.bold),

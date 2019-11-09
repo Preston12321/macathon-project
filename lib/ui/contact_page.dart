@@ -7,7 +7,11 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contacts'),
+        centerTitle: true,
+        backgroundColor: Colors.red,
+        title: Text(
+          'Contacts'
+        ),
       ),
       floatingActionButton: FloatingActionButton(child: Icon(Icons.add),onPressed: () {},),
       body: ListView(
