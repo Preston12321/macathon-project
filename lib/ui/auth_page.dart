@@ -41,6 +41,8 @@ class _AuthPageState extends State<AuthPage> {
 
   Widget _buildAuthChooser() {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         RaisedButton(
           child: Text("Sign in"),
@@ -56,13 +58,6 @@ class _AuthPageState extends State<AuthPage> {
             setState(() {
               _currentForm = 2;
             });
-          },
-        ),
-        FlatButton(
-          child: Text("Sign in later"),
-          onPressed: () {
-            BlocProvider.of<AuthBloc>(context)
-                .dispatch(AnonymousAuthRequested());
           },
         ),
       ],
