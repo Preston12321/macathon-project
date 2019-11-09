@@ -44,7 +44,7 @@ class ContactTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        leading: FlutterLogo(),
+        leading: CircleAvatar(backgroundImage: AssetImage(_imagePath)),
         title: Text(_name),
         onTap: () {
           Navigator.of(context).push(
