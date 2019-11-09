@@ -1,5 +1,4 @@
 import 'package:audioplayers/audio_cache.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 class LogPage extends StatelessWidget {
@@ -67,18 +66,40 @@ class _MessageTileState extends State<MessageTile> {
                 size: 15,
                 color: Colors.grey,
               ),
+            ),
+            ],
+        ),
+            trailing: RaisedButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  barrierDismissible: true,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      content: Container(
+                        child: Text(
+                          'Your message has been sent.'
+                        )
+                      ),
+                      actions: <Widget>[
+                        FlatButton(
+                        child: Text('OK'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        }
+                        )
+                      ]
+                    );
+                  },
+                );
+              },
+              child: Text(
+                  widget._buttontext,
+                style: TextStyle(fontSize: 20),
+              ),
             )
-          ],
         ),
-        trailing: RaisedButton(
-          onPressed: () {},
-          child: Text(
-            widget._buttontext,
-            style: TextStyle(fontSize: 20),
-          ),
-        ),
-      ),
-    );
+      );
   }
 
   @override
