@@ -43,6 +43,9 @@ class MessageTile extends StatelessWidget {
               children: <Widget>[
                 Text(_name),
                 Container(
+                  width: 10,
+                ),
+                Container(
                   child: Icon(
                     Icons.edit,
                     size: 15,
