@@ -14,6 +14,12 @@ class _AuthPageState extends State<AuthPage> {
   @override
   Widget build(BuildContext context) {
     var scaffold = Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Sign-In',
+          textAlign: TextAlign.center,
+        ),
+      ),
       key: key,
       body: SafeArea(
         child: WillPopScope(
