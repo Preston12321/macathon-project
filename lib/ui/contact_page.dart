@@ -23,11 +23,11 @@ class ContactPage extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         children: <Widget>[
-          ContactTile("Alex Zhu",""),
-          ContactTile("Bibiane Morakotkarn",""),
-          ContactTile("Gwyneth John",""),
-          ContactTile("Mew Soisangwan",""),
-          ContactTile("Yunze Wang",""),
+          ContactTile("Alex Zhu","assets/images/alex.jpg"),
+          ContactTile("Bibiane Morakotkarn","assets/images/bibiane.jpg"),
+          ContactTile("Gwyneth John","assets/images/gwyn.jpg"),
+          ContactTile("Mew Soisangwan","assets/images/mew.jpg"),
+          ContactTile("Yunze Wang","assets/images/yunze.jpg"),
         ],
       ),
     );
