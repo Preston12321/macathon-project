@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:macathon_project/auth.dart';
 import 'package:macathon_project/ui/auth_page.dart';
+import 'package:macathon_project/ui/contact_page.dart';
+import 'package:macathon_project/ui/log_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
             }
 
             if (state is Authenticated) {
-              return HomePage();
+              return ContactPage();
             }
 
             if (state is NotAuthenticated) {
