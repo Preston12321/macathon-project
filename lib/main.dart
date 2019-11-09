@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             }
 
             if (state is Authenticated) {
-              return LogPage();
+              return ContactPage();
             }
 
             if (state is NotAuthenticated) {
